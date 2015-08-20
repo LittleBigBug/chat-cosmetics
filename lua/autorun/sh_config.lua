@@ -24,12 +24,14 @@ local color_white = color_white
 CUConfig.MessagePrefix = nil -- Message prefix for the messages. Nil is default: [Server]
 CUConfig.PrefixColor = Color(0, 255, 168)
 
-CUConfig.EnableConnectMessage = true -- Enables "Player <playername> has connected to the server" in chat when anyone joins.
-CUConfig.EnableFirstSpawnMessage = true -- Enables "Player <playername> has Spawned in the server" in chat when anyone finishes loading in the server.
+CUConfig.EnableConnectMessage = false -- Enables "Player <playername> has connected to the server" in chat when anyone joins.
+CUConfig.EnableFirstSpawnMessage = false -- Enables "Player <playername> has Spawned in the server" in chat when anyone finishes loading in the server.
 
-CUConfig.EnableDisconnectMessage = true -- Enables "Player <playername> has disconnected from the server" in the chat when anyone leaves.
+CUConfig.EnableDisconnectMessage = false -- Enables "Player <playername> has disconnected from the server" in the chat when anyone leaves.
 
-CUConfig.EnableAdminSteamDisconnect = true -- Enables "Player <playername> had the steamid of <SteamID>" in the chat to all admins and superadmins when the player disconnects
+CUConfig.EnableAdminSteamDisconnect = false -- Enables "Player <playername> had the steamid of <SteamID>" in the chat to all admins and superadmins when the player disconnects
+
+
 CUConfig.AdminSteamGroups = { -- Groups to show the disconnecting players steamid to
 
 ["superadmin"] = 0,
@@ -45,7 +47,7 @@ CUConfig.CustomTag.BracketsColour = color_white -- The bracket colors of the tag
 CUConfig.CustomTag.BracketLeft = "[" -- The bracket or the right of the tag You could leave this blank
 CUConfig.CustomTag.BracketRight = "]" -- and instead just use | as a seperator ( Admin | LittleBigBug: Hi!)
 CUConfig.CustomTag.SteamIDs = { -- List of steamids to assign the Tag to.
-	
+
 ["STEAM_0:0:52985450"] = 1, -- LittleBigBug
 ["STEAM_0:1:7099"] = 2 -- Garry
 
@@ -57,6 +59,17 @@ CUConfig.CustomTag.SteamIDs = { -- List of steamids to assign the Tag to.
 -- Deathrun, DarkRP
 -- OOC, Advert, and PM work.
 
+if maestro ~= nil then
+
+	CUConfig.Tags["root"] = { 
+		Color( 255, 0, 0 ),
+		"Root", 
+		color_white, 
+		Color( 255, 94, 94 ) 
+	}
+
+end
+
 CUConfig.Tags["superadmin"] = { -- Group name in the ""
 	Color( 255, 0, 0 ), -- The color of the tag
 	"SuperAdmin", -- What to display in the tag
@@ -65,10 +78,10 @@ CUConfig.Tags["superadmin"] = { -- Group name in the ""
 }
 
 CUConfig.Tags["admin"] = {
-	Color( 255, 94, 94 ), 
-	"Admin", 
-	color_white, 
-	false 
+	Color( 255, 94, 94 ),
+	"Admin",
+	color_white,
+	false
 }
 
 CUConfig.Tags["user"] = {
