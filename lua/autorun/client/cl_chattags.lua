@@ -11,12 +11,28 @@ include("autorun/sh_config.lua")
 
 local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 
+<<<<<<< HEAD
+		if maestro ~= nil then
+
+			local tag = CUConfig.Tags[ maestro.userrank( ply ) ]
+
+		else
+
+			local tag = CUConfig.Tags[ply:GetNWString("usergroup")]
+
+		end
+
+		local text = {}
+		local table = table
+		local color_white = color_white
+=======
 
 		local text = {}
 		local tag = CUConfig.Tags[ply:GetNWString("usergroup")]
 		local table = table
 		local color_white = color_white
 
+>>>>>>> 0a057376d4f7eb9f7bd63b0d97afe3fa57316117
 		local ctag = CUConfig.CustomTag
 
 		if ctag.Enabled then
@@ -44,7 +60,11 @@ local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 			table.insert( text, CUConfig.BracketRight )
 
 		end
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> 0a057376d4f7eb9f7bd63b0d97afe3fa57316117
 		Colour = team.GetColor( ply:Team() )
 
 		table.insert( text, Colour)
