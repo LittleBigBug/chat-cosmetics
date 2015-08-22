@@ -76,11 +76,15 @@ local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 		end
 
 		if GAMEMODE.FolderName == "darkrp" then
+			
+			if prefixText ~= nil or prefixText ~= "" then
 
-			if string.find(prefixText, "Advert") then
+				if string.find(prefixText, "Advert") then
 
-				Chatcolor = CUConfig.AdvertChatColor
+					Chatcolor = CUConfig.AdvertChatColor
 
+				end
+		
 			end
 
 			table.insert( text, col1 )
