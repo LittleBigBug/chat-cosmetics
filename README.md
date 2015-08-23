@@ -7,6 +7,10 @@ Please add a bug here instead on the facepunch post.
 
 http://facepunch.com/showthread.php?t=1472886
 
+# ULX Forum Post
+
+http://forums.ulyssesmod.net/index.php?topic=8702.0
+
 # Features
 
 - Chat tags
