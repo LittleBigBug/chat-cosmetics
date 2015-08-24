@@ -10,12 +10,6 @@
 include("autorun/sh_config.lua")
 
 local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
-	
-		if string.Left( msg, 1 ) == "!" then
-			
-			return false
-			
-		end
 
 		if maestro ~= nil then
 
