@@ -77,7 +77,7 @@ local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 
 		if GAMEMODE.FolderName == "darkrp" then
 			
-			if prefixText ~= nil or prefixText ~= "" then
+			if prefixText ~= nil then
 
 				if string.find(prefixText, "Advert") then
 
