@@ -9,6 +9,8 @@
 
 include("autorun/sh_config.lua")
 
+if not CUConfig then return end -- Make sure the config exists
+
 local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 
 		if maestro ~= nil then
