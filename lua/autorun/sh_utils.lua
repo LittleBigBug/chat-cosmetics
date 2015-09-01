@@ -4,6 +4,8 @@
 -- Specially developed for Aero Game Servers
 -- Aerogameservers.com
 
+if not CUConfig then return end -- Make sure the config exists
+
 if SERVER then
 
 	AddCSLuaFile()
