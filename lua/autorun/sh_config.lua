@@ -1,27 +1,22 @@
--- _PRIORITY = 9998
+
 -- Chat Cosmetics Created and Developed by LittleBigBug
 -- http://www.steamcommunity.com/id/littlebigbug
 -- All Rights reserved
--- Specially developed for Aero Game Servers
--- Aerogameservers.com
+-- Thanks Zerf! <3
 
 -- _-----------------------------_
 -- Chat Cosmetics Configuration
 -- _-----------------------------_
 -- --_________________--
 
-CUConfig = {}
+if CUConfig == nil then CUConfig = {} end -- !!
 CUConfig.Tags = {}
-
-CUConfig.Debug = false -- For testing - prints in console
-
-local color_white = color_white
 
 -- /\ DONT TOUCH ABOVE /\
 
 -- Start Editing Below
 
-CUConfig.MessagePrefix = nil -- Message prefix for the messages. Nil is default: [Server]
+CUConfig.MessagePrefix = "[Server] " -- Prefix for join/disconnect messages etc
 CUConfig.PrefixColor = Color(0, 255, 168)
 
 CUConfig.EnableConnectMessage = false -- Enables "Player <playername> has connected to the server" in chat when anyone joins.
@@ -32,66 +27,22 @@ CUConfig.EnableDisconnectMessage = false -- Enables "Player <playername> has dis
 CUConfig.EnableAdminSteamDisconnect = false -- Enables "Player <playername> had the steamid of <SteamID>" in the chat to all admins and superadmins when the player disconnects
 
 
-CUConfig.AdminSteamGroups = { -- Groups to show the disconnecting players steamid to
-
-["superadmin"] = 0,
-["admin"] = 1
-
-}
-
-CUConfig.CustomTag = { }
-CUConfig.CustomTag.Enabled = false -- Enable the additional chat tags to only affect specific SteamIDS. Will be shown before the group tag.
-CUConfig.CustomTag.Colour = Color( 48, 255, 162 ) -- Color of the tag (not the brackets)
-CUConfig.CustomTag.Name = "Dev" -- What to display in the tag
-CUConfig.CustomTag.BracketsColour = color_white -- The bracket colors of the tag
-CUConfig.CustomTag.BracketLeft = "[" -- The bracket or the right of the tag You could leave this blank
-CUConfig.CustomTag.BracketRight = "]" -- and instead just use | as a seperator ( Admin | LittleBigBug: Hi!)
-CUConfig.CustomTag.SteamIDs = { -- List of steamids to assign the Tag to.
-
-["STEAM_0:0:52985450"] = 1, -- LittleBigBug
-["STEAM_0:1:7099"] = 2 -- Garry
-
-}
-
--- Chat Tags
--- These do work with almost every gamemode.
--- Tested Gamemodes:
--- Deathrun, DarkRP
--- OOC, Advert, and PM work.
-
-if maestro ~= nil then
-
-	CUConfig.Tags["root"] = { 
-		Color( 255, 0, 0 ),
-		"Root", 
-		color_white, 
-		Color( 255, 94, 94 ) 
-	}
-
+CUConfig.AdminSteamGroups = function( ply ) -- What groups should be considered 'Admin' Groups to get admin specific messages.
+	if ulx and ulib then
+		return ply:CheckGroup( 'admin' )
+	end
+	return ply:IsAdmin()
 end
 
-CUConfig.Tags["superadmin"] = { -- Group name in the ""
-	Color( 255, 0, 0 ), -- The color of the tag
-	"SuperAdmin", -- What to display in the tag
-	color_white, -- The brackets color of the tag
-	Color( 255, 94, 94 ) -- Chat color, or if you don't want a specific chat color, use 'false' (WILL NOT OVVERIDE /advert CHAT COLOR!)
-}
+-- Usage:
+-- CUConfig.AddTag( group or steamid table, tagcolor, tagtext, bracketcolor, bracketleft, bracketright, chatcolor )
 
-CUConfig.Tags["admin"] = {
-	Color( 255, 94, 94 ),
-	"Admin",
-	color_white,
-	false
-}
-
-CUConfig.Tags["user"] = {
-	Color(138, 138, 138), 
-	"Guest", 
-	color_white, 
-	false 
-}
-
-CUConfig.BracketLeft = "[" -- the bracket on the right of the tag. You can leave this blank
-CUConfig.BracketRight = "] " -- and this one like | as a seperator.
+CUConfig.AddTag( {"STEAM_0:0:52985450", "STEAM_0:1:7099"}, Color( 48, 255, 162 ), "Dev", color_white, "[", "]", nil )
+if maestro ~= nil then
+	CUConfig.AddTag( "root", Color( 255, 0, 0 ), "Root", color_white, "[", "]", nil )
+end
+CUConfig.AddTag( "superadmin", Color( 255, 0, 0 ), "SuperAdmin", color_white, "[", "]", nil )
+CUConfig.AddTag( "admin", Color( 255, 100, 0 ), "Admin", color_white, "[", "]", nil )
+CUConfig.AddTag( "user", Color( 0, 0, 0 ), "Guest", color_white, "[", "]", nil )
 
 CUConfig.AdvertChatColor = Color( 0, 255, 238 ) -- Color For /advert chats (DarkRP only - just leave this alone if you don't use DarkRP)
