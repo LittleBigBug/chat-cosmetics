@@ -13,6 +13,18 @@ if not CUConfig then return end -- Make sure the config exists
 
 local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 
+		if not ply:IsPlayer() then
+			local t = {}
+			
+			table.insert( Color( 100, 100, 100 ) )
+			table.insert( "Console: " )
+			table.insert( color_white )
+			table.insert( msg )
+			
+			chat.AddText( unpack( t ) )
+			return true
+		end
+
 		if maestro ~= nil then
 
 			local tag = CUConfig.Tags[ maestro.userrank( ply ) ]
