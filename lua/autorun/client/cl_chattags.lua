@@ -25,18 +25,7 @@ local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 			return true
 		end
 
-		local tag
-
-		if maestro ~= nil then
-
-			tag = CUConfig.Tags[ maestro.userrank( ply ) ]
-
-		else
-
-			tag = CUConfig.Tags[ply:GetNWString("usergroup")]
-
-		end
-
+		local tag = CUConfig.Tags[ply:GetNWString("usergroup")]
 		local text = {}
 		local table = table
 		local color_white = color_white
