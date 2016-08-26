@@ -16,10 +16,10 @@ local function AddChatTags( ply, msg, Team, dead, prefixText, col1, col2 )
 		if not ply:IsPlayer() then
 			local t = {}
 			
-			table.insert( Color( 100, 100, 100 ) )
-			table.insert( "Console: " )
-			table.insert( color_white )
-			table.insert( msg )
+			table.insert( t, Color( 100, 100, 100 ) )
+			table.insert( t, "Console: " )
+			table.insert( t, color_white )
+			table.insert( t, msg )
 			
 			chat.AddText( unpack( t ) )
 			return true
