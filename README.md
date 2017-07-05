@@ -3,6 +3,8 @@ My first Gmod Script. Customisable chat modifications for Garry's Mod.
 Please add a bug here instead on the facepunch post.
 (should) Work on all gamemodes. Make a bug post here if it does not.
 
+I have just rewritten this a 2 years after release. It really needed one.
+
 # Facepunch Post
 
 http://facepunch.com/showthread.php?t=1472886
@@ -17,25 +19,16 @@ http://forums.ulyssesmod.net/index.php?topic=8702.0
 - Change the brackets/separators
 - Change the color for brackets for each group
 - Group Specific chat colors
-- Connect/Disconnect/First Spawn (When they load in) Messages (You can disable these)
-- Send Messages to admins/superadmins with disconnecting player's SteamID information
 - Player's Name color is their team color/darkrp job.
-- Multiple Gamemode Support (Tested on Deathrun and Darkrp)
-- Customize DarkRP Advert Chat color
-- -Dead- Tags for non-darkrp gamemodes
-- [Team] tags for Team Chat on non-darkrp gamemodes
-- Custom Custom Chat tag for specific Steam IDS (Won't Conflict with regular group tag) [Requested by Dark123 and CharbelK]
+- Multiple Gamemode Support
+- Customize DarkRP Advert/OOC Chat color
+- Customize DarkRP Advert/OOC tag
+- Customisable Dead Tags for non-darkrp gamemodes
+- Customisable Team tags for Team Chat on non-darkrp gamemodes
+- Chat tags can be assigned to a steam id or a group.
+- More than one Chat tag can be created for a steamid (finally)
 - Suggest some more <3
 
 # Screenies
-Screenie 1: (Deathrun)
 
-http://i.imgur.com/gzrxXsI.png
-
-Screenie 2: (DarkRP)
-
-http://i.imgur.com/zjxD9Pk.png
-
-Screenie 3: (General)
-
-http://i.imgur.com/z0wCe4M.png
+http://img.littlebigbug.pro/15.41.16-05.07.17.png
