@@ -24,7 +24,7 @@ local function chatTags(ply, msg, isteam, dead, prefix) -- Col1 is the team colo
     -- Darkrp is special
     if GAMEMODE.FolderName == "darkrp" then
       if prefix ~= nil then
-        if string.find(prefix, "Advert") then -- is an advert message
+        if string.sub(prefix, 1, 8) == "[Advert]" then -- is an advert message
           if ptag.advertcolor ~= nil then
             chatColor = ptag.advertcolor
           else
@@ -34,7 +34,7 @@ local function chatTags(ply, msg, isteam, dead, prefix) -- Col1 is the team colo
           if cfg.Advert ~= "" then
             prefix = cfg.Advert .. " " .. ply:Nick()
           end
-        elseif string.find(prefix, "OOC") then -- is an out of character message
+        elseif string.sub(prefix, 1, 5) == "(OOC)" then -- is an out of character message
           if ptag.ooccolor ~= nil then
             chatColor = ptag.ooccolor
           else
