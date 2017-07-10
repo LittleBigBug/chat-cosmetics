@@ -5,6 +5,8 @@
 chatcosmetics.tags = {}
 local cfg = {}
 
+-- This is the layout of how Server messages look from say in console
+-- Server: Hello :D
 cfg.ConsoleMessage = function(message)
   return
   { -- Don't leave this one empty lol
