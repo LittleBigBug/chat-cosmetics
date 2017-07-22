@@ -106,4 +106,6 @@ local function chatTags(ply, msg, isteam, dead, prefix) -- Col1 is the team colo
   end
 end
 
-hook.Add("OnPlayerChat", "chatcosmetics.hijack.playerchat", chatTags)
+timer.Simple( 5, function()
+  hook.Add("OnPlayerChat", "chatcosmetics.hijack.playerchat", chatTags)
+end )
