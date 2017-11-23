@@ -17,13 +17,7 @@ local function chatTags(ply, msg, isteam, dead, prefix) -- Col1 is the team colo
     local nameColor = team.GetColor(ply:Team()) or Color(255, 255, 255)
     tbl[#tbl+1] = nameColor
 
-    if ptag == nil then
-      if tags ~= nil and #tags > 0 then
-        ptag = tags[1]    
-      end
-    end
-    
-    if ptag ~= nil and ptag.chatcolor ~= nil then
+    if ptag.chatcolor ~= nil then
       chatColor = ptag.chatcolor
     end
 
@@ -112,6 +106,4 @@ local function chatTags(ply, msg, isteam, dead, prefix) -- Col1 is the team colo
   end
 end
 
-timer.Simple( 5, function()
-  hook.Add("OnPlayerChat", "chatcosmetics.hijack.playerchat", chatTags)
-end )
+hook.Add("OnPlayerChat", "chatcosmetics.hijack.playerchat", chatTags)

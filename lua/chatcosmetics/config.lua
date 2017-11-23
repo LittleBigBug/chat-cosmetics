@@ -37,6 +37,51 @@ cfg.OOCColor = Color(200, 200, 200) -- Again, only darkrp
 
 cfg.ChatColor = Color(255, 255, 255) -- Default Chat Color
 
+-- Shows when the player first connects to the server
+-- Leave nil or blank to disable.
+cfg.ConnectMessage = {
+  Color(30, 75, 255),
+  "Conn | ",
+  Color(255, 255, 255),
+  "%s has connected to the server."
+}
+
+-- Message of showing the steam id to the below players
+cfg.SteamIDMessage = {
+  Color(30, 75, 255),
+  "Conn | ",
+  Color(255, 255, 255),
+  "Player has a Steam ID of %s"
+}
+
+-- Shows the steamid of first spawning players or disconnecting players to these users
+-- Can be a steam id, function, or usergroup
+cfg.SteamIDGroups = {
+  "superadmin",
+  "STEAM_0:0:52985450", -- Me! (testing)
+  function(ply) -- Not sure in this situation why you would need a function for this (checking if an admin), but it's just demonstrating functions.
+    return ply:GetNWString("usergroup") == "admin"
+  end,
+}
+
+-- Shows when the player first spawns into the server
+-- Leave nil or blank to disable.
+cfg.SpawnMessage = {
+  Color(30, 75, 255),
+  "Conn | ",
+  Color(255, 255, 255),
+  "%s has spawned in the server."
+}
+
+-- Shows when the player leaves the server
+-- Leave nil or blank to disable.
+cfg.DisconnectMessage = {
+  Color(30, 75, 255),
+  "Conn | ",
+  Color(255, 255, 255),
+  "%s has disconnected from the server."
+}
+
 chatcosmetics.addTag({
   suffix = false, -- make true to show the tag after the player's name.
   tag = { -- a table of what the tag looks like, you can add a comma and add more.
