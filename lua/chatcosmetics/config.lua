@@ -50,7 +50,7 @@ chatcosmetics.addTag({
   chatcolor = nil, -- Default chat color. (Advert overrides this color)
   advertcolor = nil, -- Advert Chat color specific to this tag. You can leave this 'nil' to use the default.
   ooccolor = nil, -- Same thing, but for OOC. Leave it nil to use default.
-  players = { -- can be a group, or a steam id.
+  players = { -- can be a group, or a steam id, or function.
     "superadmin"
   },
   priority = 1, -- the higher the priority, it uses this tag first. (as in chat colors, etc, if you have more than one tag, you'll also have all tags assigned to you.)
@@ -114,6 +114,29 @@ chatcosmetics.addTag({
     "STEAM_0:1:54849576", -- Harley, finally got me to rewrite this crap
   },
   priority = 2,
+})
+
+-- Just demonstrating custom functions
+chatcosmetics.addTag({
+  suffix = false,
+  tag = {
+    Color(255, 255, 255),
+    "[",
+    Color(69, 250, 32),
+    "Pro",
+    Color(255, 255, 255),
+    "]",
+  },
+  chatcolor = nil,
+  advertcolor = nil,
+  ooccolor = nil,
+  players = {
+    function(ply)
+      return ply:Frags() >= 10
+    end,
+    "superadmin",
+  },
+  priority = 1,
 })
 
 return cfg

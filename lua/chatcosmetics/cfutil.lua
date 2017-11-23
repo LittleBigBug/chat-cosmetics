@@ -21,6 +21,10 @@ function chatcosmetics.getTags(player)
   for k, v in pairs(chatcosmetics.tags) do
     local isplayerstag = false
     for _, id in pairs(v.players) do
+      if type(id) == "function" then
+        isplayerstag = id()
+      end
+      
       if player:SteamID() == id or player:GetNWString('usergroup') == id then
         isplayerstag = true
       end
